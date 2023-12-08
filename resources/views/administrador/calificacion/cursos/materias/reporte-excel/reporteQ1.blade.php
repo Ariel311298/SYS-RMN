@@ -404,12 +404,35 @@
         <tbody>    
             <tr>            
                 <td></td>   
+                <td></td> 
+                <td></td>   
+                <td></td> 
+                <td></td>   
+                <td></td> 
+                <td></td>   
+                <td></td>   
             </tr>             
             <tr>            
-                <td class="custom-sign" align="center">{{ $abreviatura }} {{ $nom_ape_docente }}</td>   
+                <td></td>
+                <td></td>   
+                <td></td> 
+                <td></td>   
+                <td></td> 
+                <td></td>   
+                <td></td>
+                <td></td>      
+                <td class="custom-sign" colspan="5" align="center">{{ $abreviatura }} {{ $nom_ape_docente }}</td>   
             </tr>
-            <tr>            
-                <td class="custom-second-sign" align="center"><strong>DOCENTE</strong></td>   
+            <tr> 
+                <td></td>   
+                <td></td>   
+                <td></td> 
+                <td></td>   
+                <td></td> 
+                <td></td>   
+                <td></td>
+                <td></td>              
+                <td class="custom-second-sign" colspan="5" align="center"><strong>DOCENTE</strong></td>   
             </tr>             
         </tbody>                             
     </table>          
