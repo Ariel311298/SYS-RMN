@@ -203,7 +203,6 @@
                 <th align="center" rowspan="3"><strong>EXAMEN (20%)</strong></th>
                 <th align="center" rowspan="3" bgcolor="#ffff00"><strong>NOTA QUIMESTRAL</strong></th>
                 <th align="center" rowspan="3"><strong>E. CUALITATIVA</strong></th>
-                <th align="center" rowspan="3"><strong>COMPORTAMIENTO</strong></th>
             </tr>    
             <tr>         
                 <th align="center" colspan="5"><strong>EVALUACIÓN FORMATIVA</strong></th>
@@ -399,7 +398,7 @@
     <table style="position: relative; margin-top: 50px;" align="center">
         <thead style="color: black;">
             <tr>         
-                <th class="custom-table"></th>           
+                <th class="custom-table"></th>          
             </tr>    
         </thead>
         <tbody>    
@@ -407,10 +406,10 @@
                 <td></td>   
             </tr>             
             <tr>            
-                <td class="custom-sign" colspan="8" align="center">{{ $abreviatura }} {{ $nom_ape_docente }}</td>   
+                <td class="custom-sign" align="center">{{ $abreviatura }} {{ $nom_ape_docente }}</td>   
             </tr>
             <tr>            
-                <td class="custom-second-sign" colspan="8" align="center"><strong>DOCENTE</strong></td>   
+                <td class="custom-second-sign" align="center"><strong>DOCENTE</strong></td>   
             </tr>             
         </tbody>                             
     </table>          
