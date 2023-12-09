@@ -49,6 +49,7 @@ class ReporteP1Q1DataExport implements FromView, WithColumnWidths, WithColumnFor
 
     public function registerEvents(): array
     {
+
         return [
             AfterSheet::class => function(AfterSheet $event) {
                 // Tamaño de fuente en 11
@@ -66,7 +67,7 @@ class ReporteP1Q1DataExport implements FromView, WithColumnWidths, WithColumnFor
                 ]);
 
                 // Bordes externos
-                $event->sheet->getStyle('A1:H21')->applyFromArray([
+                $event->sheet->getStyle('A1:H51')->applyFromArray([
                     'borders' => [
                         'outline' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM,
@@ -96,7 +97,8 @@ class ReporteP1Q1DataExport implements FromView, WithColumnWidths, WithColumnFor
                 ]);
                 
                 // Bordes para las calificaciones
-                $event->sheet->getStyle('A10:G15')->applyFromArray([
+
+                $event->sheet->getStyle('A10:G45')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
@@ -163,7 +165,277 @@ class ReporteP1Q1DataExport implements FromView, WithColumnWidths, WithColumnFor
                     ],
                 ]);
 
-                $event->sheet->getStyle('H15')->applyFromArray([
+                $event->sheet->getStyle('H16')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H17')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H18')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H19')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H20')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H21')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H22')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H23')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H24')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H25')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H26')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H27')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H28')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H29')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H30')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H31')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H32')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H33')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H34')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H35')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H36')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H37')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H38')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H39')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H40')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H41')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H42')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H43')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H44')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H45')->applyFromArray([
+                    'borders' => [
+                        'top' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                $event->sheet->getStyle('H45')->applyFromArray([
                     'borders' => [
                         'bottom' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
@@ -173,7 +445,7 @@ class ReporteP1Q1DataExport implements FromView, WithColumnWidths, WithColumnFor
                 ]);
 
                 // Borde para crear la linea de firma
-                $event->sheet->getStyle('C19')->applyFromArray([
+                $event->sheet->getStyle('C49')->applyFromArray([
                     'borders' => [
                         'top' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM,
