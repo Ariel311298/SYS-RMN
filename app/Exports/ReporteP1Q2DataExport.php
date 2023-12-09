@@ -52,7 +52,7 @@ class ReporteP1Q2DataExport implements FromView, WithColumnWidths, WithColumnFor
         return [
             AfterSheet::class => function(AfterSheet $event) {
                 // Tamaño de fuente en 11
-                $cellRange = 'A1:H21';
+                $cellRange = 'A1:H450';
                 $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setSize(11);
 
                 // Tipo de Letra - Fuente
