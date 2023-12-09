@@ -47,20 +47,20 @@ class ReporteQ1DataExport implements FromView
         return view("administrador.calificacion.cursos.materias.reporte-excel.reporteQ1",compact("calificaciones_q1", "malla_q1", "abreviatura", "nom_ape_docente"));
     }
 
-    /*
+    
     public function registerEvents(): array
     {
         return [
             AfterSheet::class => function(AfterSheet $event) {
                 // Tamaño de fuente en 11
-                $cellRange = 'A1:H21';
+                $cellRange = 'A1:H450';
                 $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setSize(11);
 
                 // Tipo de Letra - Fuente
                 $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setName('Cambria');
      
                 // Alineamiento del encabezado desde la celda A1 - H1
-                $event->sheet->styleCells('A1:H1', [
+                $event->sheet->styleCells('A1:T1', [
                     'alignment' => [
                         'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
                     ],
@@ -106,13 +106,10 @@ class ReporteQ1DataExport implements FromView
                     ],
                 ]);
 
-                */
-
                 /**
                  * Bordes para cubrir la sección Prom. Parcial 
                 */
-
-                /*
+                
                 $event->sheet->getStyle('H10')->applyFromArray([
                     'borders' => [
                         'top' => [
@@ -122,9 +119,6 @@ class ReporteQ1DataExport implements FromView
                     ],
                 ]);
 
-                */
-
-                /*
                 $event->sheet->getStyle('H11')->applyFromArray([
                     'borders' => [
                         'top' => [
@@ -192,13 +186,10 @@ class ReporteQ1DataExport implements FromView
         ];
     }    
 
-/*
-
     /*
         Configuración del tamaño de las celdas
     */
 
-    /*
     public function columnWidths(): array
     {
         return [
@@ -213,13 +204,10 @@ class ReporteQ1DataExport implements FromView
         ];
     }
     
-    */
-
     /*
         Configuración del formato de celdas en decimal
     */
 
-    /*
     public function columnFormats(): array
     {
         return [
@@ -230,6 +218,5 @@ class ReporteQ1DataExport implements FromView
             'G' => NumberFormat::FORMAT_NUMBER_00,
             'H' => NumberFormat::FORMAT_NUMBER_00,
         ];
-    }
-    */
+    }    
 }
