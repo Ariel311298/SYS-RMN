@@ -23,7 +23,7 @@ use Maatwebsite\Excel\Concerns\WithStyles;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Sheet;
 
-class ReporteQ1DataExport implements FromView
+class ReporteQ1DataExport implements FromView, WithColumnWidths, WithColumnFormatting, ShouldAutoSize, WithEvents
 {
     protected $calificacion;
     protected $malla;
@@ -66,38 +66,28 @@ class ReporteQ1DataExport implements FromView
                     ],
                 ]);
 
-                // Bordes externos
-                $event->sheet->getStyle('A1:H21')->applyFromArray([
+                // Bordes del encabezado del cuadro quimestral
+                $event->sheet->getStyle('A7:T9')->applyFromArray([
                     'borders' => [
-                        'outline' => [
-                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM,
+                        'allBorders' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_DOUBLE,
                             'color' => ['argb' => '#000000'],
                         ],
                     ],
                 ]);
 
-                // Bordes desde Periodo hasta Curso
-                $event->sheet->getStyle('A5:B8')->applyFromArray([
+                // Bordes del cuerpo del cuadro quimestral
+                $event->sheet->getStyle('A10:T44')->applyFromArray([
                     'borders' => [
-                        'allBorders' => [
-                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM,
-                            'color' => ['argb' => '#000000'],
-                        ],
-                    ],
-                ]);
-                
-                // Bordes desde Docente hasta Paralelo
-                $event->sheet->getStyle('D5:H8')->applyFromArray([
-                    'borders' => [
-                        'allBorders' => [
-                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM,
+                        'outline' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_DOUBLE,
                             'color' => ['argb' => '#000000'],
                         ],
                     ],
                 ]);
                 
                 // Bordes para las calificaciones
-                $event->sheet->getStyle('A10:G15')->applyFromArray([
+                $event->sheet->getStyle('A10:S44')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
@@ -110,7 +100,7 @@ class ReporteQ1DataExport implements FromView
                  * Bordes para cubrir la sección Prom. Parcial 
                 */
                 
-                $event->sheet->getStyle('H10')->applyFromArray([
+                $event->sheet->getStyle('T10')->applyFromArray([
                     'borders' => [
                         'top' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
@@ -119,7 +109,7 @@ class ReporteQ1DataExport implements FromView
                     ],
                 ]);
 
-                $event->sheet->getStyle('H11')->applyFromArray([
+                $event->sheet->getStyle('T11')->applyFromArray([
                     'borders' => [
                         'top' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
@@ -128,7 +118,7 @@ class ReporteQ1DataExport implements FromView
                     ],
                 ]);
 
-                $event->sheet->getStyle('H12')->applyFromArray([
+                $event->sheet->getStyle('T12')->applyFromArray([
                     'borders' => [
                         'top' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
@@ -137,7 +127,7 @@ class ReporteQ1DataExport implements FromView
                     ],
                 ]);
 
-                $event->sheet->getStyle('H13')->applyFromArray([
+                $event->sheet->getStyle('T13')->applyFromArray([
                     'borders' => [
                         'top' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
@@ -146,7 +136,7 @@ class ReporteQ1DataExport implements FromView
                     ],
                 ]);
 
-                $event->sheet->getStyle('H14')->applyFromArray([
+                $event->sheet->getStyle('T14')->applyFromArray([
                     'borders' => [
                         'top' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
@@ -155,7 +145,7 @@ class ReporteQ1DataExport implements FromView
                     ],
                 ]);
 
-                $event->sheet->getStyle('H15')->applyFromArray([
+                $event->sheet->getStyle('T15')->applyFromArray([
                     'borders' => [
                         'top' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
@@ -164,7 +154,7 @@ class ReporteQ1DataExport implements FromView
                     ],
                 ]);
 
-                $event->sheet->getStyle('H15')->applyFromArray([
+                $event->sheet->getStyle('T15')->applyFromArray([
                     'borders' => [
                         'bottom' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
@@ -174,7 +164,7 @@ class ReporteQ1DataExport implements FromView
                 ]);
 
                 // Borde para crear la linea de firma
-                $event->sheet->getStyle('C19')->applyFromArray([
+                $event->sheet->getStyle('I48:M48')->applyFromArray([
                     'borders' => [
                         'top' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM,
@@ -217,6 +207,17 @@ class ReporteQ1DataExport implements FromView
             'F' => NumberFormat::FORMAT_NUMBER_00,
             'G' => NumberFormat::FORMAT_NUMBER_00,
             'H' => NumberFormat::FORMAT_NUMBER_00,
+            'I' => NumberFormat::FORMAT_NUMBER_00,
+            'J' => NumberFormat::FORMAT_NUMBER_00,
+            'K' => NumberFormat::FORMAT_NUMBER_00,
+            'L' => NumberFormat::FORMAT_NUMBER_00,
+            'M' => NumberFormat::FORMAT_NUMBER_00,
+            'N' => NumberFormat::FORMAT_NUMBER_00,
+            'O' => NumberFormat::FORMAT_NUMBER_00,
+            'P' => NumberFormat::FORMAT_NUMBER_00,
+            'Q' => NumberFormat::FORMAT_NUMBER_00,
+            'R' => NumberFormat::FORMAT_NUMBER_00,
+            'S' => NumberFormat::FORMAT_NUMBER_00,
         ];
     }    
 }
