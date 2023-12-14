@@ -53,12 +53,16 @@ class ReporteQ1DataExport implements FromView, WithColumnWidths, WithColumnForma
         return [
             AfterSheet::class => function(AfterSheet $event) {
                 // Tamaño de fuente en 11
-                $cellRange = 'A1:T450';
+                $cellRange = 'A1:T100';
                 $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setSize(11);
 
                 // Tipo de Letra - Fuente
                 $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setName('Cambria');
      
+                // Texto en 90 grados para la sección del Primer Parcial
+                $rangoCelda = 'C9:G9';
+                $event->sheet->getDelegate()->getStyle($rangoCelda)->getAlignment()->setTextRotation(90);
+
                 // Alineamiento del encabezado desde la celda A1 - H1
                 $event->sheet->styleCells('A1:T1', [
                     'alignment' => [
@@ -78,6 +82,16 @@ class ReporteQ1DataExport implements FromView, WithColumnWidths, WithColumnForma
 
                 // Bordes del cuerpo del cuadro quimestral
                 $event->sheet->getStyle('A10:T44')->applyFromArray([
+                    'borders' => [
+                        'outline' => [
+                            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_DOUBLE,
+                            'color' => ['argb' => '#000000'],
+                        ],
+                    ],
+                ]);
+
+                // Bordes del pie de página del cuadro quimestral
+                $event->sheet->getStyle('A45:T50')->applyFromArray([
                     'borders' => [
                         'outline' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_DOUBLE,
@@ -606,8 +620,8 @@ class ReporteQ1DataExport implements FromView, WithColumnWidths, WithColumnForma
     public function columnWidths(): array
     {
         return [
-            'A' => 9.71,
-            'B' => 39.14,
+            'A' => 4.00,
+            'B' => 39.57,
             'C' => 19.15,
             'D' => 12.86,
             'E' => 10.29,  
