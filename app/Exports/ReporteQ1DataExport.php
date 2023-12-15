@@ -54,7 +54,7 @@ class ReporteQ1DataExport implements FromView, WithColumnWidths, WithColumnForma
             AfterSheet::class => function(AfterSheet $event) {
                 // Tamaño de fuente en 11
                 $cellRange = 'A1:T100';
-                $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setSize(11);
+                $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setSize(10);
 
                 // Tipo de Letra - Fuente
                 $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setName('Cambria');
@@ -63,7 +63,82 @@ class ReporteQ1DataExport implements FromView, WithColumnWidths, WithColumnForma
                 $rangoCelda = 'C9:G9';
                 $event->sheet->getDelegate()->getStyle($rangoCelda)->getAlignment()->setTextRotation(90);
 
-                // Alineamiento del encabezado desde la celda A1 - H1
+                // Texto en 90 grados para el encabezado "Evaluación Formativa" del Primer Parcial desde la celda C9 - G9
+                $event->sheet->styleCells('C9:G9', [
+                    'alignment' => [
+                        'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                    ],
+                ]);
+
+                // Texto en 90 grados para la sección del Promedio del Primer Parcial
+                $rangoCelda = 'H8:H9';
+                $event->sheet->getDelegate()->getStyle($rangoCelda)->getAlignment()->setTextRotation(90);
+
+                // Texto en 90 grados para la sección del Promedio del Primer Parcial desde la celda H8 - H9
+                $event->sheet->styleCells('H8:H9', [
+                    'alignment' => [
+                        'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                    ],
+                ]);
+
+                // Tamaño del alto de la celda del Promedio del Primer Parcial y del Segundo Parcial (Q1)
+                $event->sheet->getDelegate()->getRowDimension('8')->setRowHeight(30);
+
+                // Alineamiento del encabezado "Evaluación Formativa" del Primer Parcial desde la celda C8 - G8
+                $event->sheet->styleCells('C8:G8', [
+                    'alignment' => [
+                        'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                    ],
+                ]);
+
+                // Texto en 90 grados para la sección del Segundo Parcial
+                $rangoCelda2 = 'I9:M9';
+                $event->sheet->getDelegate()->getStyle($rangoCelda2)->getAlignment()->setTextRotation(90);
+
+                 // Texto en 90 grados para el encabezado "Evaluación Formativa" del Segundo Parcial desde la celda I9 - M9
+                 $event->sheet->styleCells('I9:M9', [
+                    'alignment' => [
+                        'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                    ],
+                ]);
+
+                // Texto en 90 grados para la sección del Promedio del Segundo Parcial
+                $rangoCelda2 = 'N8:N9';
+                $event->sheet->getDelegate()->getStyle($rangoCelda2)->getAlignment()->setTextRotation(90);
+
+                // Texto en 90 grados para la sección del Promedio del Segundo Parcial desde la celda N8 - N9
+                $event->sheet->styleCells('N8:N9', [
+                    'alignment' => [
+                        'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                    ],
+                ]);
+
+                // Alineamiento del encabezado "Evaluación Formativa" del Primer Parcial desde la celda I8 - M8
+                $event->sheet->styleCells('I8:M8', [
+                    'alignment' => [
+                        'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                    ],
+                ]);
+
+               // Texto en 90 grados para las celdas O7 - T9  
+               $rangoCelda3 = 'O7:T9';
+               $event->sheet->getDelegate()->getStyle($rangoCelda3)->getAlignment()->setTextRotation(90);
+
+               // Texto en 90 grados para las celdas O7 - T9
+                $event->sheet->styleCells('O7:T9', [
+                    'alignment' => [
+                        'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                    ],
+                ]);
+
+                // Alineamiento del encabezado desde la celda A7 - B9
+                $event->sheet->styleCells('A7:B9', [
+                    'alignment' => [
+                        'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                    ],
+                ]);
+
+                // Alineamiento del encabezado desde la celda A1 - T1
                 $event->sheet->styleCells('A1:T1', [
                     'alignment' => [
                         'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
@@ -111,7 +186,7 @@ class ReporteQ1DataExport implements FromView, WithColumnWidths, WithColumnForma
                 ]);
 
                 /**
-                 * Bordes para cubrir la sección Prom. Parcial 
+                 * Bordes para cubrir la sección Esc. Cualitativa
                 */
                 
                 $event->sheet->getStyle('T10')->applyFromArray([
@@ -614,7 +689,7 @@ class ReporteQ1DataExport implements FromView, WithColumnWidths, WithColumnForma
     }    
 
     /*
-        Configuración del tamaño de las celdas
+        Configuración del tamaño de las celdas (Ancho de celdas)
     */
 
     public function columnWidths(): array
@@ -622,15 +697,32 @@ class ReporteQ1DataExport implements FromView, WithColumnWidths, WithColumnForma
         return [
             'A' => 4.00,
             'B' => 39.57,
-            'C' => 19.15,
-            'D' => 12.86,
-            'E' => 10.29,  
-            'F' => 8.34,  
-            'G' => 8.34,
-            'H' => 8.34    
+            'C' => 5.71,
+            'D' => 5.71,
+            'E' => 5.71,  
+            'F' => 5.71,  
+            'G' => 5.71,
+            'H' => 6.14,
+            'I' => 5.71,
+            'J' => 5.71,
+            'K' => 5.71,  
+            'L' => 5.71,  
+            'M' => 5.71,
+            'N' => 6.14,
+            'O' => 7.35,
+            'P' => 7.29,
+            'Q' => 7.29,  
+            'R' => 7.29,  
+            'S' => 7.29,
+            'T' => 7.29     
         ];
     }
     
+    /*
+        Configuración del tamaño de las celdas (Alto de celdas)
+    */
+
+
     /*
         Configuración del formato de celdas en decimal
     */

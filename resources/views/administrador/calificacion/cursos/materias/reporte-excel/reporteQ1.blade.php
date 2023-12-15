@@ -197,12 +197,27 @@
                 <th align="center" rowspan="3"><strong>NOMINA</strong></th>
                 <th align="center" colspan="6"><strong>PRIMER PARCIAL</strong></th>
                 <th align="center" colspan="6"><strong>SEGUNDO PARCIAL</strong></th>
-                <th align="center" rowspan="3"><strong>PROMEDIO DOS PARCIALES</strong></th>
-                <th align="center" rowspan="3"><strong>PROMEDIO 80%</strong></th>
+                <th align="center" rowspan="3"><strong>
+                    PROMEDIO
+                <br>
+                    DOS 
+                <br>
+                    PARCIALES</strong></th>
+                <th align="center" rowspan="3"><strong>
+                    PROMEDIO
+                    <br> 
+                    80%</strong></th>
                 <th align="center" rowspan="3"><strong>EXAMEN</strong></th>
-                <th align="center" rowspan="3"><strong>EXAMEN (20%)</strong></th>
-                <th align="center" rowspan="3" bgcolor="#ffff00"><strong>NOTA QUIMESTRAL</strong></th>
-                <th align="center" rowspan="3"><strong>E. CUALITATIVA</strong></th>
+                <th align="center" rowspan="3"><strong>
+                    EXAMEN
+                    <br> 
+                    (20%)</strong></th>
+                <th align="center" rowspan="3" bgcolor="#ffff00"><strong>NOTA
+                    <br> 
+                    QUIMESTRAL</strong></th>
+                <th align="center" rowspan="3"><strong>E.
+                    <br> 
+                    CUALITATIVA</strong></th>
             </tr>    
             <tr>         
                 <th align="center" colspan="5"><strong>EVALUACIÓN FORMATIVA</strong></th>
