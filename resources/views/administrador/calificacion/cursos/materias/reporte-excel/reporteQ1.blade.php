@@ -170,17 +170,28 @@
     </table>
     <table class="table table-header-rotated">           
         <tr>
+            <th class="custom-table">
+            </th>
 
             <th class="custom-table">
             </th>
 
-            <th class="row-header"><strong>Quimestre:</strong></th>                 
-            <td colspan="4">Primero</td>
+            <th class="row-header" colspan="2"><strong>Quimestre:</strong></th>                 
+            <td>Primero</td>
 
             <th class="custom-table">
             </th>
             
-            <th class="row-header"><strong>Jornada:</strong></th>
+            <th class="custom-table">
+            </th>
+            
+            <th class="custom-table">
+            </th>
+            
+            <th class="custom-table">
+            </th>
+            
+            <th class="row-header" colspan="2"><strong>Jornada:</strong></th>
             <td colspan="4">{{$malla_q1->oferta->curso->seccion->sec_nombre}}</td>
 
             <th class="custom-table">
