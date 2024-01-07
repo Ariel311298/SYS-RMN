@@ -676,7 +676,7 @@ class ReporteQ1DataExport implements FromView, WithColumnWidths, WithColumnForma
                 ]);
 
                 // Borde para crear la linea de firma
-                $event->sheet->getStyle('I48:M48')->applyFromArray([
+                $event->sheet->getStyle('G48:L48')->applyFromArray([
                     'borders' => [
                         'top' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM,
@@ -718,11 +718,6 @@ class ReporteQ1DataExport implements FromView, WithColumnWidths, WithColumnForma
         ];
     }
     
-    /*
-        Configuración del tamaño de las celdas (Alto de celdas)
-    */
-
-
     /*
         Configuración del formato de celdas en decimal
     */

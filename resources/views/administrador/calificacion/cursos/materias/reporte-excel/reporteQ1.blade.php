@@ -523,10 +523,8 @@
                 <td></td> 
                 <td></td>   
                 <td></td> 
-                <td></td>   
-                <td></td>
-                <td></td>      
-                <td class="custom-sign" colspan="5" align="center">{{ $abreviatura }} {{ $nom_ape_docente }}</td>   
+                <td></td>     
+                <td class="custom-sign" colspan="6" align="center">{{ $abreviatura }} {{ $nom_ape_docente }}</td>   
             </tr>
             <tr> 
                 <td></td>   
@@ -534,10 +532,8 @@
                 <td></td> 
                 <td></td>   
                 <td></td> 
-                <td></td>   
-                <td></td>
                 <td></td>              
-                <td class="custom-second-sign" colspan="5" align="center"><strong>DOCENTE</strong></td>   
+                <td class="custom-second-sign" colspan="6" align="center"><strong>DOCENTE</strong></td>   
             </tr>             
         </tbody>                             
     </table>          
