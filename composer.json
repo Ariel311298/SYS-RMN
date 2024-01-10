@@ -9,6 +9,7 @@
         "barryvdh/laravel-dompdf": "^2.0",
         "dompdf/dompdf": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
+        "guzzlehttp/psr7": "^2.4",
         "haruncpi/laravel-id-generator": "^1.1",
         "kyslik/column-sortable": "^6.5",
         "laravel/framework": "^9.19",
