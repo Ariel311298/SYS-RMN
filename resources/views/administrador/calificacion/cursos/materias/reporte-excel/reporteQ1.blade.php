@@ -192,13 +192,13 @@
             </th>
             
             <th class="row-header" colspan="2"><strong>Jornada:</strong></th>
-            <td colspan="4">{{$malla_q1->oferta->curso->seccion->sec_nombre}}</td>
+            <td colspan="2">{{$malla_q1->oferta->curso->seccion->sec_nombre}}</td>
 
             <th class="custom-table">
             </th>
             
             <th class="row-header"><strong>Curso:</strong></th>
-            <td colspan="4">{{$malla_q1->oferta->curso->cur_nombre}} {{$malla_q1->oferta->curso->cur_paralelo}}</td>
+            <td colspan="2">{{$malla_q1->oferta->curso->cur_nombre}} {{$malla_q1->oferta->curso->cur_paralelo}}</td>
     </table>
               
     <table class="table table-count" style="position: relative;" align="center">
