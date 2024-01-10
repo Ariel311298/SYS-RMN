@@ -774,6 +774,55 @@ Modulo Administrador - Consultar Calificaciones - Asignaturas - {{$oferta->perio
                       <!-- /.modal-dialog Reporte Excel - P2Q2 -->
                     </div>
                     <!-- /.modal Reporte Excel - P2Q2 -->  
+
+                     <!-- Reporte Excel - Q2 -->
+                     <div class="modal fade" id="val-calificacion-excel6">
+                      <div class="modal-dialog">
+                        <div class="modal-content bg-success">
+                          <div class="modal-header">
+                            <h4 class="modal-title">Generar Reporte en Excel - Quimestre: 2</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <form action="{{url('administrador/calificacion/cursos/materias/exportReportCalifQ2Excel')}}" method="post">
+                          {{csrf_field()}}
+                          <div class="modal-body">      
+                            <p>Seleccione la abreviatura y edite los nombres y apellidos</p>                                
+                            <strong><p>Abreviatura:</p></strong>
+                            <select name="abreviatura" id="abreviatura" type='text' class="form-control" required>
+                              <option value="Lcdo.">Lcdo.</option>
+                              <option value="Lcda.">Lcda.</option>
+                              <option value="Profr.">Profr.</option>
+                              <option value="Profa.">Profa.</option>
+                              <option value="Mgtr.">Mgtr.</option>
+                              <option value="Tnlgo.">Tnlgo.</option>
+                              <option value="Tnlga.">Tnlga.</option>
+                              <option value="Arq.">Arq.</option>
+                              <option value="Ing.">Ing.</option>
+                            </select>
+                            <br>
+                            <strong><p>Nombres y Apellidos del Docente:</p></strong>
+                            <input type="text" id="nom_ape_docente" class="form-control" name="nom_ape_docente" required>
+                            <input type="hidden" name="mal_id" id="mal_id" value="">
+                          </div>
+                          <div class="modal-footer justify-content-between">
+                              <button type="button" class="btn btn-outline-light" data-dismiss="modal">
+                                  Cerrar
+                                  <i class="fas fa-arrow-left"></i>
+                              </button>
+                              <button class="btn btn-outline-light" type="submit">
+                                  Generar Reporte
+                                  <i class="fas fa-file-excel"></i>
+                              </button>
+                          </div>
+                          </form>
+                        </div>
+                        <!-- /.modal-content Reporte Excel - Q2 -->
+                      </div>
+                      <!-- /.modal-dialog Reporte Excel - Q2 -->
+                    </div>
+                    <!-- /.modal Reporte Excel - Q2 -->
                   </td>
                 </tr>
               @endforeach

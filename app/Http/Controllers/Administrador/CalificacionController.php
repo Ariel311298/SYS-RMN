@@ -19,6 +19,7 @@ use App\Exports\ReporteP2Q1DataExport;
 use App\Exports\ReporteQ1DataExport;
 use App\Exports\ReporteP1Q2DataExport;
 use App\Exports\ReporteP2Q2DataExport;
+use App\Exports\ReporteQ2DataExport;
 
 class CalificacionController extends Controller
 {
@@ -706,7 +707,7 @@ class CalificacionController extends Controller
     }   
 
     /**
-     * Genera el reporte en Excel de las calificaciones de la materia seleccionada de un curso determinado del segundo parcial (Q1).
+     * Genera el reporte en Excel de las calificaciones de la materia seleccionada de un curso determinado del primer quimestre (Q1).
      * 
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -751,6 +752,22 @@ class CalificacionController extends Controller
             $q->where('mal_id', $mal_id);
         })->get();
         return Excel::download(new ReporteP2Q2DataExport($calificaciones_p2q2, $malla_p2q2), "reporte_calificaciones_P2Q2.xlsx");
+    }   
+
+    /**
+     * Genera el reporte en Excel de las calificaciones de la materia seleccionada de un curso determinado del segundo quimestre (Q2).
+     * 
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+    */
+
+    public function exportReportCalifQ2Excel(Request $request){
+        $mal_id = $request->mal_id;           
+        $malla_q2 = Malla::query()->findOrFail($mal_id);
+        $calificaciones_q2 = Calificacion::whereHas('malla', function($q) use($mal_id) {
+            $q->where('mal_id', $mal_id);
+        })->get();
+        return Excel::download(new ReporteQ2DataExport($calificaciones_q2, $malla_q2), "reporte_calificaciones_Q2.xlsx");
     }   
 
     /**

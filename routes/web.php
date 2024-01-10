@@ -283,6 +283,7 @@ Route::prefix('administrador')->middleware(['auth','isAdmin'])->group(function()
     Route::post('/calificacion/cursos/materias/exportReportCalifQ1Excel','App\Http\Controllers\Administrador\CalificacionController@exportReportCalifQ1Excel');   
     Route::post('/calificacion/cursos/materias/exportReportCalifP1Q2Excel','App\Http\Controllers\Administrador\CalificacionController@exportReportCalifP1Q2Excel');   
     Route::post('/calificacion/cursos/materias/exportReportCalifP2Q2Excel','App\Http\Controllers\Administrador\CalificacionController@exportReportCalifP2Q2Excel');   
+    Route::post('/calificacion/cursos/materias/exportReportCalifQ2Excel','App\Http\Controllers\Administrador\CalificacionController@exportReportCalifQ2Excel');   
     Route::any("/calificacion/index/search",[CalificacionController::class, 'search']);
     Route::any("/calificacion/cursos/searchcurso",[CalificacionController::class, 'searchcurso']);
 
