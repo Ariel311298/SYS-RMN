@@ -20,6 +20,7 @@ use App\Exports\ReporteQ1DataExport;
 use App\Exports\ReporteP1Q2DataExport;
 use App\Exports\ReporteP2Q2DataExport;
 use App\Exports\ReporteQ2DataExport;
+use App\Exports\ReportePromAnualDataExport;
 
 class CalificacionController extends Controller
 {
