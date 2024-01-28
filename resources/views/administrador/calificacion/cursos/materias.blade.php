@@ -27,7 +27,7 @@ Modulo Administrador - Consultar Calificaciones - Asignaturas - {{$oferta->perio
             <h3 class="card-title">Periodo: {{$oferta->periodo->per_nombre}} / Seccion: {{$oferta->curso->seccion->sec_nombre}} / Curso: {{$oferta->curso->cur_nombre}} {{$oferta->curso->cur_paralelo}} / Tutor de Curso: {{$oferta->personal->pers_nombres}} {{$oferta->personal->pers_apellidos}}</h3> 
         </div>
         <!-- /.card-header -->
-        <div class="card-body" style="overflow:scroll;">
+        <div class="card-body">
         <table id="example2" class="table table-bordered table-striped table-count">
             <thead>
                 <tr align="center">
