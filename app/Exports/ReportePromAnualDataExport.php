@@ -44,12 +44,12 @@ class ReportePromAnualDataExport implements FromView, WithColumnWidths, WithColu
         $malla_anual=$this->malla;
         $abreviatura = request()->input('abreviatura');
         $nom_ape_docente = request()->input('nom_ape_docente');
+        $abrev_rector = request()->input('abrev_rector');
         $nom_ape_rector = request()->input('nom_ape_rector');
         $selec_rector = request()->input('selec_rector');
-        return view("administrador.calificacion.cursos.materias.reporte-excel.reporteAnual",compact("c_anual", "malla_anual", "abreviatura", "nom_ape_docente", "nom_ape_rector", "selec_rector"));
+        return view("administrador.calificacion.cursos.materias.reporte-excel.reporteAnual",compact("c_anual", "malla_anual", "abreviatura", "nom_ape_docente", "abrev_rector", "nom_ape_rector", "selec_rector"));
     }
 
-    
     public function registerEvents(): array
     {
         return [

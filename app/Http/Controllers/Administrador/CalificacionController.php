@@ -772,6 +772,22 @@ class CalificacionController extends Controller
     }   
 
     /**
+     * Genera el reporte en Excel de las calificaciones de la materia seleccionada de un curso determinado del promedio anual.
+     * 
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+    */
+
+    public function exportReportCalifAnualExcel(Request $request){
+        $mal_id = $request->mal_id;           
+        $malla_anual = Malla::query()->findOrFail($mal_id);
+        $c_anual = Calificacion::whereHas('malla', function($q) use($mal_id) {
+            $q->where('mal_id', $mal_id);
+        })->get();
+        return Excel::download(new ReporteQ2DataExport($c_anual, $malla_anual), "rep_calif_prom_final.xlsx");
+    }   
+
+    /**
      * Muestra la tabla de alumnos matriculados de un curso seleccionado.
      *
      * @param  int  $id

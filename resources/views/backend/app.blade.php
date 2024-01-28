@@ -399,6 +399,13 @@
     var modal = $(this);
     modal.find('.modal-body #mal_id').val(mal_id);
   });
+
+  $('#val-calificacion-excel7').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); 
+    var mal_id = button.data('mal_id');
+    var modal = $(this);
+    modal.find('.modal-body #mal_id').val(mal_id);
+  });
 </script>
 
 <!-- DataTables & Plugins -->
