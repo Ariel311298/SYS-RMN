@@ -86,15 +86,15 @@ class ReportePromAnualDataExport implements FromView, WithColumnWidths, WithColu
                 // Alto de la celda 8 en fila para diseño consistente de la tabla de calificaciones.                  
                 $event->sheet->getDelegate()->getRowDimension('8')->setRowHeight(1);
 
-                // Alineamiento del encabezado desde la celda A1 - H1
-                $event->sheet->styleCells('A1:H1', [
+                // Alineamiento del encabezado desde la celda A1 - G1
+                $event->sheet->styleCells('A1:G1', [
                     'alignment' => [
                         'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
                     ],
                 ]);
 
                 // Bordes del encabezado del cuadro de promedio anual
-                $event->sheet->getStyle('A9:H11')->applyFromArray([
+                $event->sheet->getStyle('A10:G12')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_DOUBLE,

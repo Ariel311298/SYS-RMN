@@ -11,11 +11,7 @@
         img{
             left: 50px;          
         }
-        
-        .bold{
-            font-weight: bold;
-        }
-        
+                
         .table {
             font-family: Cambria;
             border-collapse: collapse;
@@ -143,7 +139,7 @@
     <table align="center" style="margin-top: -40px;">
         <thead style="color: black;">
             <tr>
-                <th style="border-style: none;" colspan="20" align="center">
+                <th style="border-style: none;" colspan="7" align="center">
                     <img src="../public/backend/dist/img/logo_institucion_educativa.png" alt="Escudo_Unidad_Educativa_Enrique_Malo_Andrade" width="600" height="100"/>
                     <strong>
                         UNIDAD EDUCATIVA ENRIQUE MALO ANDRADE
@@ -153,14 +149,14 @@
         </thead>
         <tbody>
             <tr>  
-                <td style="border-style: none;" colspan="20" align="center">
+                <td style="border-style: none;" colspan="7" align="center">
                     <strong>
                         CUADRO DE CALIFICACIONES ANUALES
                     </strong> 
                 </td>          
             </tr> 
             <tr>
-                <td style="border-style: none;" colspan="20" align="center">
+                <td style="border-style: none;" colspan="7" align="center">
                     <strong>
                         AÑO LECTIVO {{$malla_anual->oferta->periodo->per_nombre}} 
                     </strong> 
@@ -170,8 +166,20 @@
     </table>
     <table class="table table-header-rotated">           
         <tr>
-            <th class="row-header" colspan="2"><strong>JORNADA:</strong>{{$malla_anual->oferta->curso->seccion->sec_nombre}}</th>                 
-            <th class="row-header" colspan="2"><strong>ASIGNATURA:</strong>{{$malla_anual->asignatura->asig_nom}}</th> 
+            <th><strong>JORNADA:</strong></th>
+            <th>{{$malla_anual->oferta->curso->seccion->sec_nombre}}</th>
+            <th><strong>CURSO:</strong></th>     
+            <th>{{$malla_anual->oferta->curso->cur_nombre}} {{$malla_anual->oferta->curso->cur_paralelo}}</th>                               
+        </tr>
+        <tr>                
+            <th></th> 
+        </tr>
+        <tr>                
+            <th><strong>ASIGNATURA:</strong></th> 
+            <th>{{$malla_anual->asignatura->asig_nom}}</th> 
+        </tr>
+        <tr>                
+            <th></th> 
         </tr>
     </table>
               
