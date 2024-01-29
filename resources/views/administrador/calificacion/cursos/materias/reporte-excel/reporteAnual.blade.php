@@ -170,8 +170,8 @@
     </table>
     <table class="table table-header-rotated">           
         <tr>
-            <th class="row-header" colspan="2"><strong>JORNADA:</strong> {{$malla_anual->oferta->curso->seccion->sec_nombre}}</th>                 
-            <th class="row-header" colspan="2"><strong>ASIGNATURA:</strong> {{$malla_anual->asignatura->asig_nom}}</th> 
+            <th class="row-header" colspan="2"><strong>JORNADA:</strong>{{$malla_anual->oferta->curso->seccion->sec_nombre}}</th>                 
+            <th class="row-header" colspan="2"><strong>ASIGNATURA:</strong>{{$malla_anual->asignatura->asig_nom}}</th> 
         </tr>
     </table>
               
@@ -180,53 +180,19 @@
             <tr>         
                 <th align="center" rowspan="3"><strong>N°</strong></th>
                 <th align="center" rowspan="3"><strong>NOMINA</strong></th>
-                <th align="center" colspan="6"><strong>PRIMER PARCIAL</strong></th>
-                <th align="center" colspan="6"><strong>SEGUNDO PARCIAL</strong></th>
-                <th align="center" rowspan="3"><strong>
-                    PROMEDIO
-                <br>
-                    DOS 
-                <br>
-                    PARCIALES</strong></th>
-                <th align="center" rowspan="3"><strong>
-                    PROMEDIO
-                    <br> 
-                    80%</strong></th>
-                <th align="center" rowspan="3"><strong>EXAMEN</strong></th>
-                <th align="center" rowspan="3"><strong>
-                    EXAMEN
-                    <br> 
-                    (20%)</strong></th>
-                <th align="center" rowspan="3" bgcolor="#ffff00"><strong>NOTA
-                    <br> 
-                    QUIMESTRAL</strong></th>
-                <th align="center" rowspan="3"><strong>E.
-                    <br> 
-                    CUALITATIVA</strong></th>
-            </tr>    
-            <tr>         
-                <th align="center" colspan="5"><strong>EVALUACIÓN FORMATIVA</strong></th>
-                <th align="center" rowspan="2" bgcolor="#ffff00"><strong>PROMEDIO</strong></th>
-                <th align="center" colspan="5"><strong>EVALUACIÓN FORMATIVA</strong></th>
-                <th align="center" rowspan="2" bgcolor="#ffff00"><strong>PROMEDIO</strong></th>
-            </tr>              
-            <tr>         
-                <th align="center"><strong>DEB.</strong></th>
-                <th align="center"><strong>TAI.</strong></th>
-                <th align="center"><strong>TAG.</strong></th>
-                <th align="center"><strong>LEC.</strong></th>
-                <th align="center"><strong>PRU.</strong></th>
-                <th align="center"><strong>DEB.</strong></th>
-                <th align="center"><strong>TAI.</strong></th>
-                <th align="center"><strong>TAG.</strong></th>
-                <th align="center"><strong>LEC.</strong></th>
-                <th align="center"><strong>PRU.</strong></th>
-            </tr>        
+                <th align="center" rowspan="3"><strong>PROMEDIO 
+                    <br>
+                    ANUAL</strong></th>
+                <th align="center" rowspan="3"><strong>SUPLET.</strong></th>
+                <th align="center" rowspan="3"><strong>REMEDIAL</strong></th>
+                <th align="center" rowspan="3"><strong>GRACIA</strong></th>
+                <th align="center" rowspan="3"><strong>OBSERVACIÓN</strong></th>
+            </tr>                  
         </thead>
         <tbody>   
-            @if(!empty($calificaciones_q2))
+            @if(!empty($calif_anual))
                 <?php $count = 0; ?>
-                @foreach ($calificaciones_q2 as $calificacion) 
+                @foreach ($calif_anual as $calificacion) 
                     @if($calificacion->cal_estado == 1)   
                         <?php $count = $count+1; ?>        
                         <tr class="{{$count % 2 == 0? "even": "odd"}}">
@@ -402,7 +368,10 @@
             </tr>    
         </thead>
         <tbody>    
-        <tr>            
+            <tr>            
+                <td></td>   
+            </tr> 
+            <tr>            
                 <td></td>   
             </tr>   
             <tr>            
@@ -493,33 +462,15 @@
                 <td></td>   
             </tr>             
             <tr>            
-                <td></td>   
-                <td></td> 
-                <td></td>   
-                <td></td> 
-                <td></td>   
-                <td></td> 
-                <td></td>   
-                <td></td>   
-            </tr>             
-            <tr>            
-                <td></td>
-                <td></td>   
-                <td></td> 
-                <td></td>   
-                <td></td> 
-                <td></td>     
-                <td class="custom-sign" colspan="6" align="center">{{ $abreviatura }} {{ $nom_ape_docente }}</td>   
+                <td class="custom-sign" align="center">{{ $abreviatura }} {{ $nom_ape_docente }}</td>
+                <td></td>  
+                <td class="custom-sign" align="center">{{ $abrev_rector }} {{ $nom_ape_rector }}</td>
             </tr>
-            <tr> 
-                <td></td>   
-                <td></td>   
+            <tr>            
+                <td class="custom-second-sign" align="center"><strong>DOCENTE</strong></td>
                 <td></td> 
-                <td></td>   
-                <td></td> 
-                <td></td>              
-                <td class="custom-second-sign" colspan="6" align="center"><strong>DOCENTE</strong></td>   
-            </tr>             
+                <td class="custom-second-sign" align="center"><strong>{{ $selec_rector }}</strong></td>
+            </tr>                 
         </tbody>                             
     </table>          
 </body>

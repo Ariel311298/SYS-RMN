@@ -781,10 +781,10 @@ class CalificacionController extends Controller
     public function exportReportCalifAnualExcel(Request $request){
         $mal_id = $request->mal_id;           
         $malla_anual = Malla::query()->findOrFail($mal_id);
-        $c_anual = Calificacion::whereHas('malla', function($q) use($mal_id) {
+        $calif_anual = Calificacion::whereHas('malla', function($q) use($mal_id) {
             $q->where('mal_id', $mal_id);
         })->get();
-        return Excel::download(new ReportePromAnualDataExport($c_anual, $malla_anual), "rep_calif_prom_final.xlsx");
+        return Excel::download(new ReportePromAnualDataExport($calif_anual, $malla_anual), "reporteCalifAnual.xlsx");
     }   
 
     /**

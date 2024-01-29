@@ -824,7 +824,7 @@ Modulo Administrador - Consultar Calificaciones - Asignaturas - {{$oferta->perio
                     </div>
                     <!-- /.modal Reporte Excel - Q2 -->
 
-                     <!-- Reporte Excel - Cuadro Anual -->
+                     <!-- Reporte Excel - Promedio Anual -->
                      <div class="modal fade" id="val-calificacion-excel7">
                       <div class="modal-dialog">
                         <div class="modal-content bg-success">
@@ -890,11 +890,11 @@ Modulo Administrador - Consultar Calificaciones - Asignaturas - {{$oferta->perio
                           </div>
                           </form>
                         </div>
-                        <!-- /.modal-content Reporte Excel - Q2 -->
+                        <!-- /.modal-content Reporte Excel - Promedio Anual -->
                       </div>
-                      <!-- /.modal-dialog Reporte Excel - Q2 -->
+                      <!-- /.modal-dialog Reporte Excel - Promedio Anual -->
                     </div>
-                    <!-- /.modal Reporte Excel - Q2 -->
+                    <!-- /.modal Reporte Excel - Promedio Anual -->
                   </td>
                 </tr>
               @endforeach

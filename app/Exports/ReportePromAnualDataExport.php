@@ -40,14 +40,14 @@ class ReportePromAnualDataExport implements FromView, WithColumnWidths, WithColu
     */
 
     public function view(): View {
-        $c_anual=$this->calificacion;
+        $calif_anual=$this->calificacion;
         $malla_anual=$this->malla;
         $abreviatura = request()->input('abreviatura');
         $nom_ape_docente = request()->input('nom_ape_docente');
         $abrev_rector = request()->input('abrev_rector');
         $nom_ape_rector = request()->input('nom_ape_rector');
         $selec_rector = request()->input('selec_rector');
-        return view("administrador.calificacion.cursos.materias.reporte-excel.reporteAnual",compact("c_anual", "malla_anual", "abreviatura", "nom_ape_docente", "abrev_rector", "nom_ape_rector", "selec_rector"));
+        return view("administrador.calificacion.cursos.materias.reporte-excel.reporteAnual",compact("calif_anual", "malla_anual", "abreviatura", "nom_ape_docente", "abrev_rector", "nom_ape_rector", "selec_rector"));
     }
 
     public function registerEvents(): array
@@ -133,14 +133,7 @@ class ReportePromAnualDataExport implements FromView, WithColumnWidths, WithColu
     public function columnWidths(): array
     {
         return [
-            'A' => 0.75,
-            'B' => 7.50,
-            'C' => 1.65,
-            'D' => 1.80,
-            'E' => 1.65,  
-            'F' => 1.65,  
-            'G' => 1.65,
-            'H' => 2.28    
+ 
         ];
     }
     
@@ -151,11 +144,7 @@ class ReportePromAnualDataExport implements FromView, WithColumnWidths, WithColu
     public function columnFormats(): array
     {
         return [
-            'C' => NumberFormat::FORMAT_NUMBER_00,
-            'E' => NumberFormat::FORMAT_NUMBER_00,
-            'F' => NumberFormat::FORMAT_NUMBER_00,
-            'G' => NumberFormat::FORMAT_NUMBER_00,
-            'H' => NumberFormat::FORMAT_NUMBER_00,
+
         ];
     }
 }
