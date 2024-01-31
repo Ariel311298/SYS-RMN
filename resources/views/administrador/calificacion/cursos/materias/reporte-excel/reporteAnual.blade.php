@@ -176,10 +176,8 @@
         </tr>
         <tr>                
             <th><strong>ASIGNATURA:</strong></th> 
-            <th>{{$malla_anual->asignatura->asig_nom}}</th> 
-        </tr>
-        <tr>                
-            <th></th> 
+            <th>{{$malla_anual->asignatura->asig_nom}}</th>
+            <th></th>  
         </tr>
     </table>
               
@@ -198,6 +196,8 @@
             </tr>                  
         </thead>
         <tbody>   
+            <tr></tr>
+            <tr></tr>
             @if(!empty($calif_anual))
                 <?php $count = 0; ?>
                 @foreach ($calif_anual as $calificacion) 
@@ -207,159 +207,38 @@
                             <td align="center">{{ $count }}</td>
                             <td align="left">{{$calificacion->matricula->alumno->alum_nombres}} {{$calificacion->matricula->alumno->alum_apellidos}}</td>  
                             <td align="center">
-                                @if($calificacion->cal_deberP1Q2)
-                                    {{$calificacion->cal_deberP1Q2}}
+                                @if($calificacion->cal_promAnual)
+                                    {{$calificacion->cal_promAnual}}
                                 @else
                                     0.00
                                 @endif
                             </td>  
                             <td align="center">
-                                @if($calificacion->cal_actindP1Q2)    
-                                    {{$calificacion->cal_actindP1Q2}}
+                                @if($calificacion->cal_examSupletorio)
+                                    {{$calificacion->cal_examSupletorio}}
                                 @else
                                     0.00
                                 @endif    
                             </td>  
                             <td align="center">
-                                @if($calificacion->cal_actgruP1Q2)
-                                    {{$calificacion->cal_actgruP1Q2}}
+                                @if($calificacion->cal_examRemedial)
+                                    {{$calificacion->cal_examRemedial}}
                                 @else
                                     0.00
-                                @endif    
+                                @endif
                             </td> 
                             <td align="center">
-                                @if($calificacion->cal_lecP1Q2)
-                                    {{$calificacion->cal_lecP1Q2}}
+                                @if($calificacion->cal_examGracia)
+                                    {{$calificacion->cal_examGracia}}
                                 @else
                                     0.00
-                                @endif    
+                                @endif   
                             </td>
                             <td align="center">
-                                @if($calificacion->cal_pruP1Q2)
-                                    {{$calificacion->cal_pruP1Q2}}
+                                @if($calificacion->cal_estatus)
+                                    {{$calificacion->cal_estatus}}
                                 @else
-                                    0.00
-                                @endif  
-                            </td> 
-                            @if($calificacion->cal_promP1Q2 >= 7.00)
-                                <td align="center" bgcolor="#ffff00">
-                                    @if($calificacion->cal_promP1Q2)
-                                        {{$calificacion->cal_promP1Q2}}
-                                    @else
-                                        0.00
-                                    @endif
-                                </td>
-                            @elseif($calificacion->cal_promP1Q2 < 7.00)
-                                <td align="center" bgcolor="#ff0000">
-                                    @if($calificacion->cal_promP1Q2)
-                                        {{$calificacion->cal_promP1Q2}}
-                                    @else
-                                        0.00
-                                    @endif
-                                </td>
-                            @endif
-                            <td align="center">
-                                @if($calificacion->cal_deberP2Q2)
-                                    {{$calificacion->cal_deberP2Q2}}
-                                @else
-                                    0.00
-                                @endif
-                            </td>  
-                            <td align="center">
-                                @if($calificacion->cal_actindP2Q2)    
-                                    {{$calificacion->cal_actindP2Q2}}
-                                @else
-                                    0.00
-                                @endif    
-                            </td>  
-                            <td align="center">
-                                @if($calificacion->cal_actgruP2Q2)
-                                    {{$calificacion->cal_actgruP2Q2}}
-                                @else
-                                    0.00
-                                @endif    
-                            </td> 
-                            <td align="center">
-                                @if($calificacion->cal_lecP2Q2)
-                                    {{$calificacion->cal_lecP2Q2}}
-                                @else
-                                    0.00
-                                @endif    
-                            </td>
-                            <td align="center">
-                                @if($calificacion->cal_pruP2Q2)
-                                    {{$calificacion->cal_pruP2Q2}}
-                                @else
-                                    0.00
-                                @endif  
-                            </td> 
-                            @if($calificacion->cal_promP2Q2 >= 7.00)
-                                <td align="center" bgcolor="#ffff00">
-                                    @if($calificacion->cal_promP2Q2)
-                                        {{$calificacion->cal_promP2Q2}}
-                                    @else
-                                        0.00
-                                    @endif
-                                </td> 
-                            @elseif($calificacion->cal_promP2Q2 < 7.00)
-                                <td align="center" bgcolor="#ff0000">
-                                    @if($calificacion->cal_promP2Q2)
-                                        {{$calificacion->cal_promP2Q2}}
-                                    @else
-                                        0.00
-                                    @endif
-                                </td>
-                            @endif
-                            <td align="center">
-                                @if($calificacion->cal_promParQ2)    
-                                    {{$calificacion->cal_promParQ2}}
-                                @else
-                                    0.00
-                                @endif
-                            </td> 
-                            <td align="center">
-                                @if($calificacion->cal_promQ2_80)    
-                                    {{$calificacion->cal_promQ2_80}}
-                                @else
-                                    0.00
-                                @endif
-                            </td>
-                            <td align="center" bgcolor="#87cefa">
-                                @if($calificacion->cal_examQ2_10) 
-                                    {{$calificacion->cal_examQ2_10}}
-                                @else
-                                    0.00
-                                @endif
-                            </td> 
-                            <td align="center">
-                                @if($calificacion->cal_examQ2_20) 
-                                    {{$calificacion->cal_examQ2_20}}
-                                @else
-                                    0.00
-                                @endif
-                            </td>
-                            @if($calificacion->cal_promTotalQ2 >= 7.00)
-                                <td align="center" bgcolor="#ffff00">
-                                    @if($calificacion->cal_promTotalQ2) 
-                                        {{$calificacion->cal_promTotalQ2}}
-                                    @else
-                                        0.00
-                                    @endif
-                                </td>
-                            @elseif($calificacion->cal_promTotalQ2 < 7.00)
-                                <td align="center" bgcolor="#ff0000">
-                                    @if($calificacion->cal_promTotalQ2)
-                                        {{$calificacion->cal_promTotalQ2}}
-                                    @else
-                                        0.00
-                                    @endif
-                                </td>
-                            @endif
-                            <td align="center">
-                                @if($calificacion->cal_escalaQ2) 
-                                    {{$calificacion->cal_escalaQ2}}
-                                @else
-                                    NAAR
+                                    -
                                 @endif
                             </td> 
                         </tr>
@@ -462,21 +341,22 @@
             </tr>   
             <tr>            
                 <td></td>   
-            </tr>   
-            <tr>            
-                <td></td>   
-            </tr>   
-            <tr>            
-                <td></td>   
-            </tr>             
-            <tr>            
+            </tr> 
+            <tr>
+                <td></td>
+            </tr>            
+            <tr> 
+                <td></td>  
+                <td></td>           
                 <td class="custom-sign" align="center">{{ $abreviatura }} {{ $nom_ape_docente }}</td>
                 <td></td>  
                 <td class="custom-sign" align="center">{{ $abrev_rector }} {{ $nom_ape_rector }}</td>
             </tr>
             <tr>            
-                <td class="custom-second-sign" align="center"><strong>DOCENTE</strong></td>
-                <td></td> 
+                <td></td>
+                <td></td>
+                <td class="custom-second-sign" align="center"><strong>DOCENTE</strong></td> 
+                <td></td>
                 <td class="custom-second-sign" align="center"><strong>{{ $selec_rector }}</strong></td>
             </tr>                 
         </tbody>                             

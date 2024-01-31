@@ -94,7 +94,7 @@ class ReportePromAnualDataExport implements FromView, WithColumnWidths, WithColu
                 ]);
 
                 // Bordes del encabezado del cuadro de promedio anual
-                $event->sheet->getStyle('A10:G12')->applyFromArray([
+                $event->sheet->getStyle('A9:G11')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_DOUBLE,
@@ -104,7 +104,7 @@ class ReportePromAnualDataExport implements FromView, WithColumnWidths, WithColu
                 ]);
 
                 // Bordes del cuerpo del cuadro de promedio anual
-                $event->sheet->getStyle('A12:H46')->applyFromArray([
+                $event->sheet->getStyle('A12:G46')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_DOUBLE,
@@ -114,7 +114,7 @@ class ReportePromAnualDataExport implements FromView, WithColumnWidths, WithColu
                 ]);
 
                 // Bordes del pie de página del cuadro del promedio anual
-                $event->sheet->getStyle('A48:H49')->applyFromArray([
+                $event->sheet->getStyle('A47:G51')->applyFromArray([
                     'borders' => [
                         'outline' => [
                             'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_DOUBLE,
