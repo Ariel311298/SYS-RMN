@@ -93,6 +93,17 @@ class ReportePromAnualDataExport implements FromView, WithColumnWidths, WithColu
                     ],
                 ]);
 
+                // Alineamiento de los items desde la celda A9 - G11
+                $event->sheet->styleCells('A9:G11', [
+                    'alignment' => [
+                        'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                    ],
+                ]);
+
+                // Texto en 90 grados de los items 
+                $rangoCelda = 'C9:G11';
+                $event->sheet->getDelegate()->getStyle($rangoCelda)->getAlignment()->setTextRotation(90);
+
                 // Bordes del encabezado del cuadro de promedio anual
                 $event->sheet->getStyle('A9:G11')->applyFromArray([
                     'borders' => [
@@ -122,6 +133,9 @@ class ReportePromAnualDataExport implements FromView, WithColumnWidths, WithColu
                         ],
                     ],
                 ]);
+
+                // Tamaño del alto de la celda de los items
+                $event->sheet->getDelegate()->getRowDimension('9')->setRowHeight(57.75);
             },
         ];
     }    
@@ -133,7 +147,7 @@ class ReportePromAnualDataExport implements FromView, WithColumnWidths, WithColu
     public function columnWidths(): array
     {
         return [
- 
+            'G' => 18.57
         ];
     }
     
@@ -144,7 +158,11 @@ class ReportePromAnualDataExport implements FromView, WithColumnWidths, WithColu
     public function columnFormats(): array
     {
         return [
-
+            'C' => NumberFormat::FORMAT_NUMBER_00,
+            'D' => NumberFormat::FORMAT_NUMBER_00,
+            'E' => NumberFormat::FORMAT_NUMBER_00,
+            'F' => NumberFormat::FORMAT_NUMBER_00,
+            'G' => NumberFormat::FORMAT_NUMBER_00
         ];
     }
 }

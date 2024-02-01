@@ -186,13 +186,13 @@
             <tr>         
                 <th align="center" rowspan="3"><strong>N°</strong></th>
                 <th align="center" rowspan="3"><strong>NOMINA</strong></th>
-                <th align="center" rowspan="3"><strong>PROMEDIO 
+                <th align="center" rowspan="3" bgcolor="#ffff00"><strong>PROMEDIO 
                     <br>
                     ANUAL</strong></th>
                 <th align="center" rowspan="3"><strong>SUPLET.</strong></th>
                 <th align="center" rowspan="3"><strong>REMEDIAL</strong></th>
                 <th align="center" rowspan="3"><strong>GRACIA</strong></th>
-                <th align="center" rowspan="3"><strong>OBSERVACIÓN</strong></th>
+                <th align="center" rowspan="3" bgcolor="#86895d"><strong>OBSERVACIÓN</strong></th>
             </tr>                  
         </thead>
         <tbody>   
@@ -206,28 +206,38 @@
                         <tr class="{{$count % 2 == 0? "even": "odd"}}">
                             <td align="center">{{ $count }}</td>
                             <td align="left">{{$calificacion->matricula->alumno->alum_nombres}} {{$calificacion->matricula->alumno->alum_apellidos}}</td>  
-                            <td align="center">
-                                @if($calificacion->cal_promAnual)
-                                    {{$calificacion->cal_promAnual}}
-                                @else
-                                    0.00
-                                @endif
-                            </td>  
-                            <td align="center">
+                            @if($calificacion->cal_promAnual >= 7.00)
+                                <td align="right" bgcolor="#ffff00">
+                                    @if($calificacion->cal_promAnual)
+                                        {{$calificacion->cal_promAnual}}
+                                    @else
+                                        0.00
+                                    @endif
+                                </td>  
+                            @elseif($calificacion->cal_promAnual < 7.00)
+                                <td align="right" bgcolor="#ff0000">
+                                     @if($calificacion->cal_promAnual)
+                                        {{$calificacion->cal_promAnual}}
+                                    @else
+                                        0.00
+                                    @endif
+                                </td>
+                            @endif
+                            <td align="right">
                                 @if($calificacion->cal_examSupletorio)
                                     {{$calificacion->cal_examSupletorio}}
                                 @else
                                     0.00
                                 @endif    
                             </td>  
-                            <td align="center">
+                            <td align="right">
                                 @if($calificacion->cal_examRemedial)
                                     {{$calificacion->cal_examRemedial}}
                                 @else
                                     0.00
                                 @endif
                             </td> 
-                            <td align="center">
+                            <td align="right">
                                 @if($calificacion->cal_examGracia)
                                     {{$calificacion->cal_examGracia}}
                                 @else
@@ -346,16 +356,16 @@
                 <td></td>
             </tr>            
             <tr> 
-                <td></td>  
-                <td></td>           
+                <td></td>         
                 <td class="custom-sign" align="center">{{ $abreviatura }} {{ $nom_ape_docente }}</td>
-                <td></td>  
+                <td></td>
+                <td></td>
                 <td class="custom-sign" align="center">{{ $abrev_rector }} {{ $nom_ape_rector }}</td>
             </tr>
             <tr>            
                 <td></td>
-                <td></td>
                 <td class="custom-second-sign" align="center"><strong>DOCENTE</strong></td> 
+                <td></td>
                 <td></td>
                 <td class="custom-second-sign" align="center"><strong>{{ $selec_rector }}</strong></td>
             </tr>                 
